@@ -25,4 +25,8 @@ public class JsonController {
     public JsonEntity addnewData(@RequestBody JsonEntity jsonEntity){
         return this.jsonDataServices.postnewEntity(jsonEntity);
     }
+    @DeleteMapping("/deleteById/{id}")
+    public String deleteById(@PathVariable("id") String id){
+        return  this.jsonDataServices.deleteDataById(id);
+    }
 }

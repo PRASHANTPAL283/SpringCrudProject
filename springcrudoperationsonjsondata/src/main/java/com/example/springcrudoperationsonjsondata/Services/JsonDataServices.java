@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class JsonDataServices {
@@ -36,5 +37,11 @@ public class JsonDataServices {
     }
 
 
+    public String deleteDataById(String id) {
+       mainList= mainList.stream().filter(value->value.getId().compareToIgnoreCase(id)!=1)
+               .collect(Collectors.toList());
+       return "delete successfully ";
 
+
+    }
 }
