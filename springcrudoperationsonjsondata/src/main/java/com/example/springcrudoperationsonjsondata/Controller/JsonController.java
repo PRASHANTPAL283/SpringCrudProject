@@ -29,4 +29,9 @@ public class JsonController {
     public String deleteById(@PathVariable("id") String id){
         return  this.jsonDataServices.deleteDataById(id);
     }
+
+    @GetMapping("/hello")
+    public String getthello(){
+        return "hello java";
+    }
 }
